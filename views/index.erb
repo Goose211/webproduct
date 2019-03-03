@@ -1,0 +1,35 @@
+
+<section class="first-view center-vertical">
+<h1>SDGsプロジェクト</h1>
+<div>
+<% unless session[:user] %>
+	    <form action="/signin" method="POST" class="form-inline" style="display:inline-flex; height: 18px;">
+        <input name="name" placeholder="ユーザー名"><br>
+        <input type="password" name="password" placeholder="パスワード"><br>
+        <input type="submit" value="ログイン"><br>
+      </form>
+    </div>
+    <% else %>
+
+  <% end %>
+</section>
+
+<head>
+  <link rel="stylesheet" href="/assets/css/star.css">
+</head>
+
+<div class="form-group">
+難易度<br>
+<div class="wrap">
+
+<input type="radio" name="star" value="rate0"><span class="rate rate0"></span>
+<input type="radio" name="star" value="rate1"><span class="rate rate1"></span>
+  <span class="rate rate1-5"></span>
+  <span class="rate rate2"></span>
+  <span class="rate rate2-5"></span>
+  <span class="rate rate3"></span>
+  <span class="rate rate3-5"></span>
+  <span class="rate rate4"></span>
+  <span class="rate rate4-5"></span>
+  <option value="rate5"><span class="rate rate5"></span></option>
+</div>

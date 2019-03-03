@@ -32,10 +32,20 @@
     </select>
     </div>
   </div>
+  リスト:
+  <select name="category">
+    <% Category.all.each do |c| %>
+      <option value="<%= c.id %>"><%= c.categoname %></option>
+    <% end %>
+  </select>
+
 
   <input type="submit" value="投稿">
 </form>
 </div>
+
+
+
 
 </section>
 

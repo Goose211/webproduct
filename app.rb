@@ -13,6 +13,7 @@ helpers do
   end
 end
 
+
 get '/' do
   erb :index
 end
@@ -46,10 +47,13 @@ end
 
 #homeにいく。
 get '/home' do
+  @categories = Category.all
   if current_user.nil?
     @quests = Quest.none
-  else
+  elsif params[:category].nil?
     @quests = current_user.quests
+  else
+    @quests = Category.find(params[:list]).quests.where(user_id: current_user.id)
   end
   erb :home
 end
@@ -60,6 +64,7 @@ get '/actnew' do
 end
 
 post '/new' do
+
   Quest.create(
     title: params[:title],
     client: params[:client],
@@ -70,10 +75,9 @@ post '/new' do
     user_id: current_user.id,
     user_name: current_user.name)
 
-
-
 redirect '/home'
 end
+
 
 get '/new/delete/:id' do
   Quest.find(params[:id]).delete

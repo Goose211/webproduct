@@ -4,8 +4,16 @@
 <meta charset="UTF-8">
 <title>個人画面</title>
 </head>
-
+<body>
 <h1><%= current_user.name %>さんの部屋</h1>
+
+<div>
+  <ul>
+    <li><a href="/home">全て</a></li>
+    <% @categories.each do |c| %>
+    <li><a href="/?category=<%= c.id %>"><%= c.categoname %></a></li>
+  <% end %>
+
 
 <div style="line-height: 0.5em">
 <% @quests.each do |t| %>
@@ -20,4 +28,5 @@
         <p><a href="/new/delete/<%= t.id%>">削除</a></p>
       </div>
     <% end %>
+    </body>
 </div>

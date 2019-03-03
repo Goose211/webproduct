@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.timestamps null: false
       t.text :self
       t.string :zodiacsigns
+      t.integer :number
     end
   end
 end

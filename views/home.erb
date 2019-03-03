@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>個人画面</title>
-<link rel="stylesheet" href="/assets/css/star.css">
 </head>
 
 <h1><%= current_user.name %>さんの部屋</h1>
+
+<div style="line-height: 0.5em">
 <% @quests.each do |t| %>
       <div>
         <p>活動内容:<%= t.title %></p>
@@ -14,8 +15,9 @@
         <p>条件:<%= t.condition %></p>
         <p>参加者:<%= t.member %></p>
         <p>詳細:<%= t.details %></p>
-        <p>難易度:<%= t.star %></p>
+        <p>難易度:<span class="<%= t.star %>"></span></p>
         <p>投稿者:<%= t.user_name %></p>
         <p><a href="/new/delete/<%= t.id%>">削除</a></p>
       </div>
     <% end %>
+</div>

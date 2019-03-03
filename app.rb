@@ -69,7 +69,10 @@ post '/new' do
     star: params[:star],
     user_id: current_user.id,
     user_name: current_user.name)
-redirect '/'
+
+
+
+redirect '/home'
 end
 
 get '/new/delete/:id' do

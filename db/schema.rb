@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_03_02_081451) do
     t.datetime "updated_at", null: false
     t.text "self"
     t.string "zodiacsigns"
+    t.integer "number"
   end
 
 end
